@@ -1,42 +1,139 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&display=swap');
+
+.App {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.light {
+  background: radial-gradient(circle, #D5F3FF 0%, #51B4E8 100%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.dark {
+  background: radial-gradient(circle, #53388F 0%, #2F2958 100%);
 }
 
 .card {
-  padding: 2em;
+  background: radial-gradient(circle, #E5F2FF 0%, #D5F3FF 97.4%);
+  box-shadow: 0px 4.85px 4.85px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.card.dark {
+  background: linear-gradient(180deg, #5836B3 0%, #5936B4 0.01%, #362A84 100%);
+}
+
+input[type="text"] {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.search-button,
+.toggle-temp-button,
+.toggle-mode-button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 178px;
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-button.light,
+.toggle-temp-button.light,
+.toggle-mode-button.light {
+  background-color: #38A0D8;
+  box-shadow: 0px 4.85px 4.85px rgba(0, 0, 0, 0.25);
+}
+
+.search-button.dark,
+.toggle-temp-button.dark,
+.toggle-mode-button.dark {
+  background-color: #7D69F1;
+  box-shadow: 0px 4.85px 4.85px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  font-size: 79px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 95px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 12px;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }
