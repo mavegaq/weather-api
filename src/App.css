@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .App {
   font-family: 'Lato', sans-serif;
   display: flex;
@@ -9,14 +24,17 @@
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
+  position: relative;
 }
 
-.light {
+body .light {
   background: radial-gradient(circle, #D5F3FF 0%, #51B4E8 100%);
+  color: #000000;
 }
 
-.dark {
+body .dark {
   background: radial-gradient(circle, #53388F 0%, #2F2958 100%);
+  color: #FFFFFF;
 }
 
 .card {
@@ -60,6 +78,7 @@ input[type="text"] {
 .toggle-mode-button.light {
   background-color: #38A0D8;
   box-shadow: 0px 4.85px 4.85px rgba(0, 0, 0, 0.25);
+  color: #333333;
 }
 
 .search-button.dark,
@@ -67,40 +86,58 @@ input[type="text"] {
 .toggle-mode-button.dark {
   background-color: #7D69F1;
   box-shadow: 0px 4.85px 4.85px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
 }
 
-h1 {
-  font-size: 79px;
-  font-weight: 300;
+.switch-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-h2 {
-  font-size: 19px;
-  font-weight: 700;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-h3 {
-  font-size: 15px;
-  font-weight: 600;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-h4 {
-  font-size: 14px;
-  font-weight: 500;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
 }
 
-h5 {
-  font-size: 10px;
-  font-weight: 600;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+input:checked + .slider {
+  background-color: #7D69F1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
 @media screen and (min-width: 768px) {
@@ -137,3 +174,4 @@ h5 {
     margin: 0 auto;
   }
 }
+
